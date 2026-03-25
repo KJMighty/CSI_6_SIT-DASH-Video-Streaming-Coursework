@@ -39,9 +39,8 @@ The videos were transcoded into the following bitrate representations:
 - 2.0 Mbps  
 - 4.0 Mbps  
 
-### Example FFmpeg Commands
-
-```bash
-ffmpeg -i input.mp4 -b:v 1500k output_1.5.mp4
-ffmpeg -i input.mp4 -b:v 2000k output_2.mp4
-ffmpeg -i input.mp4 -b:v 4000k output_4.mp4
+Author
+Kai Mighty 
+Student ID: 4217377 
+## Results Summary 
+| Scenario | Condition | QoE Observation | MOS | |--------|----------|----------------|-----| | TBF | 2.5 Mbps | Moderate buffering, reduced quality | 3 | | HTB | 2.5–5 Mbps | Smooth playback, stable quality | 4 | | Policing | Packet loss (3.5 Mbps) | Stuttering, unstable playback | 2 |
