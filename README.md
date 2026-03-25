@@ -43,25 +43,29 @@ The videos were transcoded into the following bitrate representations:
 
 Labb38 Manifest
 
-'''bash
+```bash
 ffmpeg -i Lab38_1_5.mov -i Lab38_2.mov -i Lab38_4.mov \
 -map 0:v -map 1:v -map 2:v -c copy -f dash \
 -init_seg_name 'init_$RepresentationID$.m4s' \
 -media_seg_name 'chunk_$RepresentationID$_$Number$.m4s' \
 Lab38_manifest.mpd
+```
 
 Landscape Manifest
+```bash
 - ffmpeg -i landscape_1mbps.mp4 -i landscape_2mbps.mp4 -i landscape_4mbps.mp4 \
 -map 0:v -map 1:v -map 2:v -c copy -f dash \
 -init_seg_name 'init_$RepresentationID$.m4s' \
 -media_seg_name 'chunk_$RepresentationID$_$Number$.m4s' \
 landscape_manifest.mpd
+```
 
 ## Web Server Setup
+```bash
 - sudo apt install apache2
 sudo cp -r dash_output/* /var/www/html/
 sudo systemctl start apache2
-
+```
 ## IPERF Testing
 - iperf -s -p 5001
 
