@@ -9,6 +9,7 @@ Objectives
 - Play the stream using a dash.js-compatible player
 - Simulate network artefacts using Linux traffic control
 - Evaluate performance using Mean Opinion Score (MOS)
+
 Tools Used
 - Oracle VirtualBox
 - Kali Linux
