@@ -22,12 +22,11 @@ Tools Used
   
 Video Preparation
 
-Two HD videos were downloaded from Pexels and Videezy and transcoded into:
+The videos were transcoded into the following bitrate representations:
 
-1.5 Mbps
-2.0 Mbps
-4.0 Mbps
-DASH Packaging
+- 1.5 Mbps
+- 2.0 Mbps
+- 4.0 Mbps
 
 FFmpeg was used to generate MPD manifests and segment files for adaptive streaming.
 
