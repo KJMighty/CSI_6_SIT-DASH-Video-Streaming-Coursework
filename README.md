@@ -18,7 +18,7 @@ Tools Used
 - dash.js
 - tc (Linux Traffic Control)
 - IPERF
-- 
+  
 Video Preparation
 
 Two HD videos were downloaded from Pexels and Videezy and transcoded into:
