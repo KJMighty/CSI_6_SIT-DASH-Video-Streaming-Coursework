@@ -42,5 +42,10 @@ The videos were transcoded into the following bitrate representations:
 Author
 Kai Mighty 
 Student ID: 4217377 
-## Results Summary 
-| Scenario | Condition | QoE Observation | MOS | |--------|----------|----------------|-----| | TBF | 2.5 Mbps | Moderate buffering, reduced quality | 3 | | HTB | 2.5–5 Mbps | Smooth playback, stable quality | 4 | | Policing | Packet loss (3.5 Mbps) | Stuttering, unstable playback | 2 |
+## Results Summary
+
+| Scenario | Condition | QoE Observation | MOS |
+|--------|----------|----------------|-----|
+| TBF | 2.5 Mbps | Moderate buffering, reduced quality | 3 |
+| HTB | 2.5–5 Mbps | Smooth playback, stable quality | 4 |
+| Policing | Packet loss (3.5 Mbps) | Stuttering, unstable playback | 2 |
