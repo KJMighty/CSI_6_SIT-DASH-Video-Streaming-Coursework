@@ -61,21 +61,22 @@ A 1 Mbps TCP IPERF connection was established between the client and server to s
 
 Installation and Deployment Instructions
 1. Install FFmpeg
-sudo apt update
-sudo apt install ffmpeg
+- sudo apt update
+- sudo apt install ffmpeg
 2. Install Apache
-sudo apt install apache2
+- sudo apt install apache2
 3. Transcode video
-ffmpeg -i input.mp4 -b:v 1500k output_1.5.mp4
-ffmpeg -i input.mp4 -b:v 2000k output_2.mp4
-ffmpeg -i input.mp4 -b:v 4000k output_4.mp4
+- ffmpeg -i input.mp4 -b:v 1500k output_1.5.mp4
+- ffmpeg -i input.mp4 -b:v 2000k output_2.mp4
+- ffmpeg -i input.mp4 -b:v 4000k output_4.mp4
 4. Generate DASH files
-ffmpeg -i input_1.5.mp4 -i input_2.mp4 -i input_4.mp4 -map 0:v -map 1:v -map 2:v -c copy -f dash manifest.mpd
+- ffmpeg -i input_1.5.mp4 -i input_2.mp4 -i input_4.mp4 -map 0:v -map 1:v -map 2:v -c copy -f dash manifest.mpd
 5. Move DASH files to Apache directory
-sudo cp -r dash_output/* /var/www/html/
+- sudo cp -r dash_output/* /var/www/html/
 6. Start Apache
-sudo systemctl start apache2
+- sudo systemctl start apache2
 7. Open the stream
+
 Author
 
 Kai Mighty
