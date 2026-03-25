@@ -42,6 +42,7 @@ The videos were transcoded into the following bitrate representations:
 ## DASH Packaging
 
 Labb38 Manifest
+
 -ffmpeg -i Lab38_1_5.mov -i Lab38_2.mov -i Lab38_4.mov \
 -map 0:v -map 1:v -map 2:v -c copy -f dash \
 -init_seg_name 'init_$RepresentationID$.m4s' \
