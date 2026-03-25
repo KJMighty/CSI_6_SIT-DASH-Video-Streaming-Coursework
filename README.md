@@ -77,10 +77,6 @@ sudo cp -r dash_output/* /var/www/html/
 6. Start Apache
 sudo systemctl start apache2
 7. Open the stream
-
-Use the dash.js player and load:
-
-http://10.0.2.15/manifest.mpd
 Author
 
 Kai Mighty
