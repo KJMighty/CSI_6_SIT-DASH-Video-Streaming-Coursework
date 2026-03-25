@@ -39,7 +39,7 @@ The videos were transcoded into the following bitrate representations:
 - 2.0 Mbps  
 - 4.0 Mbps  
 
-##DASH Packaging
+## DASH Packaging
 
 Labb38 Manifest
 -ffmpeg -i Lab38_1_5.mov -i Lab38_2.mov -i Lab38_4.mov \
@@ -55,18 +55,18 @@ Landscape Manifest
 -media_seg_name 'chunk_$RepresentationID$_$Number$.m4s' \
 landscape_manifest.mpd
 
-##Web Server Setup
+## Web Server Setup
 - sudo apt install apache2
 sudo cp -r dash_output/* /var/www/html/
 sudo systemctl start apache2
 
-##IPERF Testing
+## IPERF Testing
 - iperf -s -p 5001
 
 Run Client (Ubuntu)
 - iperf -c SERVER_IP -p 5001 -b 1M -t 600
 
-##Traffic Control Scenarios
+## Traffic Control Scenarios
 
 Scenario A - TBF
 - sudo tc qdisc add dev eth0 root tbf rate 2.5mbit burst 20kb latency 50ms
