@@ -67,19 +67,27 @@ sudo cp -r dash_output/* /var/www/html/
 sudo systemctl start apache2
 ```
 ## IPERF Testing
-- iperf -s -p 5001
-
+```bash
+iperf -s -p 5001
+```
 Run Client (Ubuntu)
-- iperf -c SERVER_IP -p 5001 -b 1M -t 600
+```bash
+iperf -c SERVER_IP -p 5001 -b 1M -t 600
+```
 
 ## Traffic Control Scenarios
 
 Scenario A - TBF
-- sudo tc qdisc add dev eth0 root tbf rate 2.5mbit burst 20kb latency 50ms
+```bash
+sudo tc qdisc add dev eth0 root tbf rate 2.5mbit burst 20kb latency 50ms
+```
 
 Scenario B - HTB
-- sudo tc qdisc add dev eth0 root handle 1: htb default 11
+```bash
+sudo tc qdisc add dev eth0 root handle 1: htb default 11
+```
 
+```bash
 sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 2.5mbit
 
 sudo tc class add dev eth0 parent 1:1 classid 1:10 htb rate 1mbit ceil 2.5mbit prio 1
@@ -88,12 +96,18 @@ sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 1.5mbit ceil 2.5mbit
 
 sudo tc filter add dev eth0 protocol ip parent 1: prio 1 u32 \
 match ip dport 5001 0xffff flowid 1:10
+```
+
 
 Scenario C – Traffic Policing (Client Side)
-- sudo tc qdisc add dev enp0s3 handle ffff: ingress
+```bash
+sudo tc qdisc add dev enp0s3 handle ffff: ingress
+```
 
+```bash
 sudo tc filter add dev enp0s3 parent ffff: protocol ip prio 1 u32 \
 match u32 0 0 police rate 3.5mbit burst 20k drop flowid :1
+```
 
 ## Results Summary
 
